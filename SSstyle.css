@@ -1,0 +1,6 @@
+body {margin: 0; padding: 0; background: #555d74;}
+.header {position: relative; text-align: center; background: #393a53;
+border: solid  #000000 4px; border-radius: 0 0 15px 15px; font-family: sans-serif;
+font-size: 30px; padding: 5px;}
+.content {position: relative; font-family: sans-serif; font-size: 25px; margin-top: 50px; text-align: left; margin-left: 30px;}
+.Teile {position: relative; font-family: sans-serif; font-size: 30px;}
